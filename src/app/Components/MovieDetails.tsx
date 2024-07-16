@@ -1,11 +1,16 @@
-/**
- * This component will show details of a particular
- * movie when clicked on a movie in the list.
- *
- */
+"use client";
 
-function MovieDetails() {
-  return <div>MovieDetails</div>;
+function MovieDetails({ movie }) {
+  if (!movie) {
+    return <div>Loading...</div>;
+  }
+
+  return (
+    <div>
+      <h1>{movie.title}</h1>
+      {movie.director && <p>Director: {movie.director}</p>}
+    </div>
+  );
 }
 
 export default MovieDetails;
