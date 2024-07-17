@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import Search from "./Components/Search";
+import TrendingMovies from "./Components/TrendingMovies";
 import { MOVIES_ENDPOINT } from "./Constants/Constants";
 
 /**
@@ -70,9 +71,11 @@ export default function Home() {
         <h1>Look up your favorite movie</h1>
       </div>
       <Search />
-
       <div>
-        <h1>Top 20 Movies</h1>
+        <TrendingMovies />
+      </div>
+      <div>
+        <h1>Top 20 Movies of all time</h1>
         {top20Movies.map((movie) => (
           <p key={movie.title}>{movie.title}</p>
         ))}

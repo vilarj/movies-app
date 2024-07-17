@@ -24,7 +24,7 @@ const Search = () => {
    *
    * @param {React.ChangeEvent<HTMLInputElement>} event The change event from the input field.
    */
-  const handleSearchChange = (event) => {
+  const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(event.target.value);
   };
 
@@ -33,7 +33,7 @@ const Search = () => {
    *
    * @param {React.FormEvent<HTMLFormElement>} event The submit event from the search form.
    */
-  const handleSubmit = async (event) => {
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
     if (!searchTerm) {
