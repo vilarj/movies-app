@@ -44,7 +44,9 @@ const TrendingMovies = () => {
    *
    * @param {React.ChangeEvent<HTMLSelectElement>} event The change event from the select element.
    */
-  const handleTimeWindowChange = (event) => {
+  const handleTimeWindowChange = (
+    event: React.ChangeEvent<HTMLSelectElement>
+  ) => {
     setTimeWindow(event.target.value);
   };
 

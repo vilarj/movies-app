@@ -1,6 +1,13 @@
-.main {
+/* .main {
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  background-color: rgba(243, 243, 243, 1);
+  background: radial-gradient(
+    ellipse at top left,
+    #6600ff,
+    #00c8ff,
+    #008000,
+    #0000ff
+  );
+  color: white;
 }
 
 .main-header {
@@ -16,7 +23,6 @@
   color: white;
 }
 
-/* Search */
 .inner-search-form {
   border: 1px;
   border-radius: 5px;
@@ -38,7 +44,12 @@
   cursor: pointer;
   font-size: 20px;
 }
-/* Search Ends */
+
+.search-response li {
+  font-size: 30px;
+  list-style: none;
+  text-align: left;
+}
 
 select {
   font-family: inherit;
@@ -46,7 +57,6 @@ select {
   border: 1px solid #ccc;
 }
 
-/* Trending */
 .trending-movies ul {
   margin-bottom: 10px;
   padding-left: 20px;
@@ -58,6 +68,4 @@ select {
 
 .trending-movies a {
   text-decoration: none;
-}
-
-/* Trending Ends */
+} */

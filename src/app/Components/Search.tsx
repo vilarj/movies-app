@@ -80,18 +80,20 @@ const Search = () => {
           <button type="submit">Search</button>
         </form>
       </div>
-      {searchResults.length > 0 && (
-        <ul>
-          {searchResults.map((movie, index) => (
-            <li key={movie.id || index}>
-              {" "}
-              <a onClick={() => router.push(`/movies/${movie.title}`)}>
-                {movie.title}
-              </a>
-            </li>
-          ))}
-        </ul>
-      )}
+      <div className="search-response">
+        {searchResults.length > 0 && (
+          <ul>
+            {searchResults.map((movie, index) => (
+              <li key={movie.id || index}>
+                {" "}
+                <a onClick={() => router.push(`/movies/${movie.title}`)}>
+                  {movie.title}
+                </a>
+              </li>
+            ))}
+          </ul>
+        )}
+      </div>
     </div>
   );
 };
