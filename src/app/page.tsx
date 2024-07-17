@@ -55,7 +55,7 @@ export default function Home() {
   return (
     <div>
       <div>
-        <h1>Hello</h1>
+        <h1>Look up your favorite movie</h1>
       </div>
       <Search />
 

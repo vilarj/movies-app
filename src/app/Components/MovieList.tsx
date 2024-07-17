@@ -1,5 +1,5 @@
 "use client";
-import { useRouter } from "next/router"; // Use useRouter here for dynamic route parameters
+import { useRouter } from "next/router";
 import { useEffect } from "react";
 
 function MovieList() {

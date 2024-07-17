@@ -1,11 +1,14 @@
-"use client";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-import { BY_TITLE_ENDPOINT } from "../Constants/Constants";
+import {
+  BY_TITLE_ENDPOINT,
+  BY_TITLE_ENDPOINT_STRICT,
+} from "../Constants/Constants";
 
-function Search() {
+const Search = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [searchResults, setSearchResults] = useState([]);
+  const [searchType, setSearchType] = useState("loose");
   const router = useRouter();
 
   const handleSearchChange = (event) => {
@@ -19,8 +22,13 @@ function Search() {
       return;
     }
 
+    const url =
+      searchType === "strict"
+        ? `${BY_TITLE_ENDPOINT_STRICT}?title=${searchTerm}`
+        : `${BY_TITLE_ENDPOINT}?title=${searchTerm}`;
+
     try {
-      const response = await fetch(`${BY_TITLE_ENDPOINT}?title=${searchTerm}`);
+      const response = await fetch(url);
       if (!response.ok) {
         if (response.status === 404) {
           console.error("Movie not found");
@@ -38,6 +46,13 @@ function Search() {
   return (
     <div>
       <form onSubmit={handleSubmit}>
+        <select
+          value={searchType}
+          onChange={(e) => setSearchType(e.target.value)}
+        >
+          <option value="loose">Loose Search</option>
+          <option value="strict">Exact Search</option>
+        </select>
         <input
           type="text"
           placeholder="Search Movies"
@@ -48,8 +63,9 @@ function Search() {
       </form>
       {searchResults.length > 0 && (
         <ul>
-          {searchResults.map((movie) => (
-            <li key={movie.title || movie.id}>
+          {searchResults.map((movie, index) => (
+            <li key={movie.id || index}>
+              {" "}
               <a onClick={() => router.push(`/movies/${movie.title}`)}>
                 {movie.title}
               </a>
@@ -59,6 +75,6 @@ function Search() {
       )}
     </div>
   );
-}
+};
 
 export default Search;
