@@ -3,6 +3,12 @@ import { useEffect, useState } from "react";
 import Search from "./Components/Search";
 import { MOVIES_ENDPOINT } from "./Constants/Constants";
 
+/**
+ * Fetches movie data from the API.
+ *
+ * @returns A Promise that resolves to an array of
+ * movie data, or rejects with an error.
+ */
 const fetchData = async () => {
   try {
     const response = await fetch(`${MOVIES_ENDPOINT}`);
@@ -17,6 +23,12 @@ const fetchData = async () => {
   }
 };
 
+/**
+ * Represents the home page of the application.
+ *
+ * Displays a search component, fetches and displays a list
+ * of movies, and handles loading and error states.
+ */
 export default function Home() {
   const [movies, setMovies] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
