@@ -4,7 +4,6 @@ import {
   BY_TITLE_ENDPOINT,
   BY_TITLE_ENDPOINT_STRICT,
 } from "../Constants/Constants";
-
 /**
  * Search component for searching movies.
  *
@@ -62,9 +61,9 @@ const Search = () => {
   };
 
   return (
-    <div>
-      <div className="search-parent">
-        <form onSubmit={handleSubmit}>
+    <div className="search-parent">
+      <div>
+        <form className="inner-search-form" onSubmit={handleSubmit}>
           <select
             value={searchType}
             onChange={(e) => setSearchType(e.target.value)}

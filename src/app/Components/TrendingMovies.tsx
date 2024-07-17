@@ -49,7 +49,7 @@ const TrendingMovies = () => {
   };
 
   return (
-    <div>
+    <div className="trending-movies">
       <h1>These are the trending movies</h1>
       <select value={timeWindow} onChange={handleTimeWindowChange}>
         <option value="day">Day</option>

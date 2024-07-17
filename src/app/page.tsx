@@ -66,11 +66,11 @@ export default function Home() {
   const top20Movies = movies.slice(0, 20);
 
   return (
-    <div>
-      <div>
+    <div className="main">
+      <div className="main-header">
         <h1>Look up your favorite movie</h1>
+        <Search />
       </div>
-      <Search />
       <div>
         <TrendingMovies />
       </div>

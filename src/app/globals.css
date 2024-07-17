@@ -1,0 +1,63 @@
+.main {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  background-color: rgba(243, 243, 243, 1);
+}
+
+.main-header {
+  text-align: center;
+  font-size: 35px;
+  background: radial-gradient(
+    ellipse at top left,
+    #6600ff,
+    #00c8ff,
+    #008000,
+    #0000ff
+  );
+  color: white;
+}
+
+/* Search */
+.inner-search-form {
+  border: 1px;
+  border-radius: 5px;
+  padding: 5px 10px;
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+}
+
+.inner-search-form input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 20px;
+}
+
+.inner-search-form button {
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+}
+/* Search Ends */
+
+select {
+  font-family: inherit;
+  font-size: 20px;
+  border: 1px solid #ccc;
+}
+
+/* Trending */
+.trending-movies ul {
+  margin-bottom: 10px;
+  padding-left: 20px;
+}
+
+.trending-movies li {
+  list-style: none;
+}
+
+.trending-movies a {
+  text-decoration: none;
+}
+
+/* Trending Ends */
